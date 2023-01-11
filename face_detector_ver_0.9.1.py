@@ -12368,8 +12368,11 @@ class compare_process:
     
 """
 DESCRIPTION:
-
-In the folder d:\python_cv\face_detector\img_in\, put the face you want to find in the database under the name face_detect.png.
+The comparison is designed so that the entire database is loaded into memory and then only the index of the comparing person is called.
+Designed in such a way that you are looking for a similar person in the database and you have already uploaded their photo to the database, so you just find their index and start the comparison.
+    
+In the folder d:\python_cv\face_detector\img_in\ 
+face_detect.png is a test image and changing it has no effect, please leave it where it is.
 In the d:\python_cv\face_detector\img_in\dataset\ folder, put the faces you want to compare.
 
 The process of creating accelerated datasets can take several minutes, depending on how many images you have in the main database.
@@ -12386,13 +12389,14 @@ It is convenient to use multiple methods at the same time for higher accuracy, w
 root_path = 'd:\\github\\python-face-detector\\'
 
 if os.path.exists(root_path):
-    # Create test datasets and create all paths
+    # Create all paths and test dataset
     test_images_dataset = dtc_process(root_path).test_images_dataset()
     
     # Create datasets only destionation multi-scale procedures for fast detected for repeat find face
     dtc_process(root_path).create_all_datasets_only_des_MULTI_SCALE()
     
     # Multi-Scale Fast Detected Procedure - Creating a database into an array
+    # First number indicates is index of the image in the array, which will be compared with the entire database
     datasets_path = root_path+'face_detector\\datasets\\'
     results = compare_process().matching_and_detected(8, True, False, 1)
     
