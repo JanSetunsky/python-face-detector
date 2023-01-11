@@ -1,0 +1,32 @@
+[{
+"train_steps":1,
+"test_steps":2,
+"p1":[{
+	"trees":3,
+	"matches":25,
+	"min_matches":2,
+	"distance":0.683,
+	"flags":2000
+	}],
+"p2":[{
+	"trees":1,
+	"matches":9,
+	"min_matches":2,
+	"distance":0.590,
+	"flags":2000
+	}],
+"p3":[{
+	"trees":3,
+	"matches":25,
+	"min_matches":2,
+	"distance":0.683,
+	"flags":2000
+	}],
+"p4":[{
+	"trees":1,
+	"matches":9,
+	"min_matches":2,
+	"distance":0.590,
+	"flags":2000
+	}]
+}]
